@@ -15,6 +15,12 @@ public class Car {
         this.engine = engine;
         this.wheels = wheels;
     }
+
+    @Inject
+    public void enableRemote(Remote remote) {
+        // @Inject annotation is Method Injection
+        remote.setListener(this);
+    }
     public void drive() {
         Log.d(TAG, "Car is driving.");
     }
